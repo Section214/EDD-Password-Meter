@@ -74,9 +74,9 @@ class S214_EDD_Activation {
      */
     public function missing_edd_notice() {
         if( $this->has_edd ) {
-            echo '<div class="error"><p>' . $this->plugin_name . __( ' requires Easy Digital Downloads! Please activate it to continue!', 's214-edd-activation' ) . '</p></div>';
+            echo '<div class="error"><p>' . $this->plugin_name . __( ' requires Easy Digital Downloads! Please activate it to continue!', 'edd-password-meter' ) . '</p></div>';
         } else {
-            echo '<div class="error"><p>' . $this->plugin_name . __( ' requires Easy Digital Downloads! Please install it to continue!', 's214-edd-activation' ) . '</p></div>';
+            echo '<div class="error"><p>' . $this->plugin_name . __( ' requires Easy Digital Downloads! Please install it to continue!', 'edd-password-meter' ) . '</p></div>';
         }
     }
 }

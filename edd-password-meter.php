@@ -55,7 +55,7 @@ if( !class_exists( 'EDD_Password_Meter' ) ) {
 
         /**
          * Setup plugin constants
-         * 
+         *
          * @access      public
          * @since       1.0.2
          * @return      void
@@ -117,7 +117,7 @@ if( !class_exists( 'EDD_Password_Meter' ) ) {
             // Set filter for languages directory
             $lang_dir = dirname( plugin_basename( __FILE__ ) ) . '/languages/';
             $lang_dir = apply_filters( 'EDD_Password_Meter_languages_directory', $lang_dir );
-            
+
             // Traditional WordPress plugin locale filter
             $locale     = apply_filters( 'plugin_locale', get_locale(), '' );
             $mofile     = sprintf( '%1$s-%2$s.mo', 'edd-password-meter', $locale );
@@ -137,7 +137,7 @@ if( !class_exists( 'EDD_Password_Meter' ) ) {
                 load_plugin_textdomain( 'edd-password-meter', false, $lang_dir );
             }
         }
-            
+
 
         /**
          * Add settings
@@ -151,25 +151,25 @@ if( !class_exists( 'EDD_Password_Meter' ) ) {
             $new_settings = array(
                 array(
                     'id'    => 'edd_password_meter_settings',
-                    'name'  => '<strong>' . __( 'Password Meter Settings', 'edd_password_meter' ) . '</strong>',
-                    'desc'  => __( 'Configure Password Meter Settings', 'edd_password_meter' ),
+                    'name'  => '<strong>' . __( 'Password Meter Settings', 'edd-password-meter' ) . '</strong>',
+                    'desc'  => __( 'Configure Password Meter Settings', 'edd-password-meter' ),
                     'type'  => 'header'
                 ),
                 array(
                     'id'    => 'edd_password_meter_checkmode',
-                    'name'  => __( 'Check Mode', 'edd_password_meter' ),
-                    'desc'  => __( 'Specify strict or moderate password checking', 'edd_password_meter' ),
+                    'name'  => __( 'Check Mode', 'edd-password-meter' ),
+                    'desc'  => __( 'Specify strict or moderate password checking', 'edd-password-meter' ),
                     'type'  => 'select',
                     'options'   => array(
-                        'STRICT'    => __( 'Strict', 'edd_password_meter' ),
-                        'MODERATE'  => __( 'Moderate','edd_password_meter' )
+                        'STRICT'    => __( 'Strict', 'edd-password-meter' ),
+                        'MODERATE'  => __( 'Moderate','edd-password-meter' )
                     ),
                     'std'   => 'STRICT'
                 ),
                 array(
                     'id'    => 'edd_password_meter_strength',
-                    'name'  => __( 'Required Strength', 'edd_password_meter' ),
-                    'desc'  => __( 'Set the minimum required password strength Min: 0, Max: 1, Default: 0.8', 'edd_password_meter' ),
+                    'name'  => __( 'Required Strength', 'edd-password-meter' ),
+                    'desc'  => __( 'Set the minimum required password strength Min: 0, Max: 1, Default: 0.8', 'edd-password-meter' ),
                     'type'  => 'number',
                     'min'   => '0',
                     'max'   => '1',
@@ -179,8 +179,8 @@ if( !class_exists( 'EDD_Password_Meter' ) ) {
                 ),
                 array(
                     'id'    => 'edd_password_meter_min_length',
-                    'name'  => __( 'Minimum Length', 'edd_password_meter' ),
-                    'desc'  => __( 'Set the minimum allowed password length Default: 8', 'edd_password_meter' ),
+                    'name'  => __( 'Minimum Length', 'edd-password-meter' ),
+                    'desc'  => __( 'Set the minimum allowed password length Default: 8', 'edd-password-meter' ),
                     'type'  => 'number',
                     'min'   => '0',
                     'step'  => '1',
@@ -189,8 +189,8 @@ if( !class_exists( 'EDD_Password_Meter' ) ) {
                 ),
                 array(
                     'id'    => 'edd_password_meter_max_length',
-                    'name'  => __( 'Maximum Length', 'edd_password_meter' ),
-                    'desc'  => __( 'Set the maximum allowed password length Default: 16', 'edd_password_meter' ),
+                    'name'  => __( 'Maximum Length', 'edd-password-meter' ),
+                    'desc'  => __( 'Set the maximum allowed password length Default: 16', 'edd-password-meter' ),
                     'type'  => 'number',
                     'min'   => '0',
                     'step'  => '1',
@@ -199,20 +199,20 @@ if( !class_exists( 'EDD_Password_Meter' ) ) {
                 ),
                 array(
                     'id'    => 'edd_password_meter_hide_toggle',
-                    'name'  => __( 'Disallow Show Password', 'edd_password_meter' ),
-                    'desc'  => __( 'Select to disable the \'show password\' toggle', 'edd_password_meter' ),
+                    'name'  => __( 'Disallow Show Password', 'edd-password-meter' ),
+                    'desc'  => __( 'Select to disable the \'show password\' toggle', 'edd-password-meter' ),
                     'type'  => 'checkbox'
                 ),
                 array(
                     'id'    => 'edd_password_meter_hide_gen',
-                    'name'  => __( 'Disallow Password Generation', 'edd_password_meter' ),
-                    'desc'  => __( 'Select to disabled the \'generate password\' button', 'edd_password_meter' ),
+                    'name'  => __( 'Disallow Password Generation', 'edd-password-meter' ),
+                    'desc'  => __( 'Select to disabled the \'generate password\' button', 'edd-password-meter' ),
                     'type'  => 'checkbox'
                 ),
                 array(
                     'id'    => 'edd_password_meter_hide_tooltip',
-                    'name'  => __( 'Hide Tooltips', 'edd_password_meter' ),
-                    'desc'  => __( 'Select to hide generation guideline tooltips', 'edd_password_meter' ),
+                    'name'  => __( 'Hide Tooltips', 'edd-password-meter' ),
+                    'desc'  => __( 'Select to hide generation guideline tooltips', 'edd-password-meter' ),
                     'type'  => 'checkbox'
                 )
             );
@@ -230,7 +230,7 @@ if( !class_exists( 'EDD_Password_Meter' ) ) {
          */
         public function error_check() {
             if( !empty( $_POST['edd_invalid_password_strength'] ) ) {
-                edd_set_error( 'edd_invalid_password_strength', __( 'Your password is insecure. Please enter a stronger password.', 'edd_password_meter' ) );
+                edd_set_error( 'edd_invalid_password_strength', __( 'Your password is insecure. Please enter a stronger password.', 'edd-password-meter' ) );
             }
         }
     }
