@@ -9,8 +9,8 @@
  * Text Domain:     edd-password-meter
  *
  * @package         EDD\PasswordMeter
- * @author          Daniel J Griffiths <dgriffiths@section214.com>
- * @copyright       Copyright (c) 2013-2014, Daniel J Griffiths
+ * @author          Sandhills Development, LLC
+ * @copyright       Copyright (c) 2020, Sandhills Development, LLC
  */
 
 
